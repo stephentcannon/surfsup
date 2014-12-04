@@ -1,0 +1,64 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta charset="utf-8" />
+  <title>Surfs Up</title>
+  <meta name="description" content="Surfs Up">
+  <meta name="author" content="steeve">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Surfs Up!</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <div class="col-sm-3 col-md-3 pull-right">
+          <form class="navbar-form" role="form">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Change location..." name="changeLocation" id="changeLocation">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fa fa-thumbs-o-up fa-lg"></i></button>
+                </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {{loc}}
+  {{#if error}}
+    <p>Error: {{error.message}}</p>
+  {{else}}
+    <div style="position: relative; z-index: 1;">
+      <img style="opacity: 0.4; filter: alpha(opacity=40); position: absolute; z-index: 2;" src="http://maps.googleapis.com/maps/api/staticmap?center={{lat}}, {{lon}}&{{getMapSize}}&zoom=9&maptype=roadmap" />
+      <img style="float:right" src="{{getWeatherIcon}}">
+      <span id="overlay_text" style="position: absolute; z-index: 3;">
+        <strong>
+        Nearest Point: {{nearestPoint}}<br/>
+        Distance From Point: {{pointDistance}} miles<br/>
+        Temperature: {{getWeatherSessionValue "tempF"}}F<br/>
+        Water Temperature: {{getWeatherSessionValue "waterTemp_F"}}F<br/>
+        Cloud Cover: {{getWeatherSessionValue "cloudcover"}}<br/>
+        Humidity: {{getWeatherSessionValue "humidity"}}<br/>
+        Precipitation: {{getWeatherSessionValue "precipMM"}}MM<br/>
+        Visibility: {{getWeatherSessionValue "visibility"}}K<br/>
+        Wind Direction: {{getWeatherSessionValue  "winddir16Point"}} at {{getWeatherSessionValue "winddirDegree"}} degrees<br/>
+        Wind Speed: {{getWeatherSessionValue  "windspeedKmph"}} Kmph<br/>
+        Wave Height: {{getWeatherSessionValue "sigHeight_m"}}M<br/>
+        Swell Height: {{getWeatherSessionValue "swellHeight_m"}}M<br/>
+        Swell Direction: {{getWeatherSessionValue "swellDir"}} degrees<br/>
+        Swell Period: {{getWeatherSessionValue "swellPeriod_secs"}} seconds<br/>
+        </strong>
+      </span>
+    </div>
+  {{/if}}
+</body>

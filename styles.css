@@ -1,0 +1,12 @@
+@-ms-viewport {
+  width: device-width;
+}
+body {
+  padding-top: 50px;
+  background-color: #96B4E4;
+  color: #ffffff;
+}
+#overlay_text {
+  padding-left: 5px;
+  text-shadow: 5px 5px 10px black;
+}
