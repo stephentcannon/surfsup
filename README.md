@@ -3,17 +3,17 @@ Surfs Up README
 
 Packages
 ========
-meteor add http
-meteor add mizzao:bootstrap-3  
-meteor add natestrauser:font-awesome  
-meteor add ficshelf:media-query 
-meteor add-platform android
-meteor add mdg:geolocation 
+* meteor add http
+* meteor add mizzao:bootstrap-3  
+* meteor add natestrauser:font-awesome  
+* meteor add ficshelf:media-query 
+* meteor add-platform android
+* meteor add mdg:geolocation 
 
-START UP TIPS
+MOBILED START UP TIPS
 ==============
-export ANT_HOME=/home/steeve/.meteor/android_bundle/apache-ant-1.9.4
-export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-i386'
+* export ANT_HOME=/home/steeve/.meteor/android_bundle/apache-ant-1.9.4
+* export JAVA_HOME='/usr/lib/jvm/java-7-openjdk-i386'
 
 
 YOU MAY HAVE TO
@@ -22,12 +22,9 @@ rm -rf $HOME/.meteor/android_bundle
 
 Weather Data
 ============
-http://www.worldweatheronline.com/free-weather-feed.aspx
-Key: 80871687910145e5eede51eaa2885
+* api.worldweatheronline.com/free/v2/marine.ashx?q=lat,long&format=json&key=80871687910145e5eede51eaa2885
 
-api.worldweatheronline.com/free/v2/marine.ashx?q=lat,long&format=json&key=80871687910145e5eede51eaa2885
-
-api.worldweatheronline.com/free/v2/marine.ashx?q=28,-82&format=json&key=80871687910145e5eede51eaa2885
+* api.worldweatheronline.com/free/v2/marine.ashx?q=28,-82&format=json&key=80871687910145e5eede51eaa2885
 
 weather element
 {
@@ -55,4 +52,4 @@ weather element
 
 Maps
 =====
-https://developers.google.com/maps/documentation/staticmaps/
+* https://developers.google.com/maps/documentation/staticmaps/
